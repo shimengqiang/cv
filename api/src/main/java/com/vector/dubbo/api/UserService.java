@@ -1,10 +1,10 @@
 package com.vector.dubbo.api;
 
-import com.vector.dubbo.entity.User;
+import com.vector.dubbo.entity.UserDto;
 
 public interface UserService {
 
     String login(String name, String password);
 
-    Boolean register(User user);
+    Boolean register(UserDto userDto);
 }

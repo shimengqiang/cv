@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Hello world!
  *
  */
-//开启dubbo的自动配置
 @EnableDubboConfiguration
 @SpringBootApplication
 public class UserApp

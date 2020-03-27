@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class User implements Serializable {
+public class UserDto implements Serializable {
 
     private String name;
     private String passWord;

@@ -3,7 +3,7 @@ package com.vector.dubbo.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.vector.dubbo.api.UserService;
 import com.vector.dubbo.bean.in.UserInVo;
-import com.vector.dubbo.entity.User;
+import com.vector.dubbo.entity.UserDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,9 +26,9 @@ public class UserController {
     }
     @PostMapping("/register")
     public Object register(@RequestBody UserInVo userInVo){
-        User user = new User();
-        BeanUtils.copyProperties(userInVo, user);
-        service.register(user);
+        UserDto userDto = new UserDto();
+        BeanUtils.copyProperties(userInVo, userDto);
+        service.register(userDto);
         return null;
     }
 }
