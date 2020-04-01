@@ -3,6 +3,8 @@
 <configuration>
     <!-- 参数设置 -->
     <settings>
+        <setting name="useGeneratedKeys" value="true"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useColumnLabel" value="true"/>
     </settings>
 </configuration>

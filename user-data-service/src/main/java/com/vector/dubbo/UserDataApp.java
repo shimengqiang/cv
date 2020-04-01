@@ -13,10 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubboConfiguration
 @SpringBootApplication
 @MapperScan(basePackages = "com.vector.dubbo.dao.mapper")
-public class DaoApp {
+public class UserDataApp {
     public static void main(String[] args) {
         System.out.println( "Hello World!" );
-        SpringApplication.run(DaoApp.class,args);
+        SpringApplication.run(UserDataApp.class,args);
     }
 }
     

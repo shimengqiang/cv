@@ -7,7 +7,7 @@ import com.vector.dubbo.entity.UserDto;
  * @Date 2020-03-27-14:24
  * @Version 1.0
  */
-public interface DataServcie {
+public interface UserDataServcie {
 
     UserDto findUserByName(String name);
 
