@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2020-03-27-14:22
  * @Version 1.0
  */
-//@EnableDubboConfiguration
+@EnableDubboConfiguration
 @SpringBootApplication
 @MapperScan(basePackages = "com.vector.dubbo.dao.mapper")
 public class DaoApp {
