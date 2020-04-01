@@ -20,7 +20,7 @@
         <module>dao</module>
         <module>common-bi</module>
         <module>api</module>
-        <module>user</module>
+        <module>user-service</module>
         <module>interface</module>
     </modules>
     <properties>
