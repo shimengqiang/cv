@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 /**
@@ -31,6 +32,10 @@ public class MySQLDataService implements DataServcie {
             BeanUtils.copyProperties(user1, userDto);
         });
         return userDto;
+    }
+    @PostConstruct
+    public void test(){
+        System.out.println(mapper.selectAll());
     }
 }
     

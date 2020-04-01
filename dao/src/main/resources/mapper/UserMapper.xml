@@ -9,31 +9,7 @@
       <arg column="sex" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from user
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.vector.dubbo.dao.model.User" >
-    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into user (name, age, sex
-      )
-    values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}
-      )
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.vector.dubbo.dao.model.User" >
-    update user
-    set name = #{name,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER},
-      sex = #{sex,jdbcType=INTEGER}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select id, name, age, sex
-    from user
-    where id = #{id,jdbcType=BIGINT}
-  </select>
+
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, name, age, sex
     from user

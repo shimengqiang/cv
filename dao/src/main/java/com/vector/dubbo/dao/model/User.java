@@ -1,5 +1,15 @@
 package com.vector.dubbo.dao.model;
 
+import lombok.Data;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@ToString
+@Entity
+@Table(name = "user")
 public class User {
     private Long id;
 
