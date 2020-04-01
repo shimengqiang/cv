@@ -1,6 +1,8 @@
 package com.vector.dubbo.service;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import com.vector.dubbo.api.DataServcie;
 import com.vector.dubbo.api.UserService;
 import com.vector.dubbo.entity.UserDto;
 import lombok.extern.slf4j.Slf4j;
@@ -13,13 +15,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class UserServiceImpl implements UserService {
-//    @Reference
-//    private DataServcie dataServcie;
+    @Reference
+    private DataServcie dataServcie;
 
     @Override
     public String login(String name, String password) {
-//        UserDto userDto = dataServcie.findUserByName(name);
-//        log.info("name {} password {}, {}", name,password, userDto.toString());
+        UserDto userDto = dataServcie.findUserByName(name);
+        log.info("name {} password {}, {}", name,password, userDto.toString());
         return "success";
     }
 

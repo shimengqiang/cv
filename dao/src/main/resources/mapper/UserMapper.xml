@@ -15,6 +15,6 @@
     from user
   </select>
   <select id="findByName" resultType="com.vector.dubbo.dao.model.User">
-    select * from user where user_name = #{userName} limit 1
+    select * from user where name = #{name} limit 1
   </select>
 </mapper>
