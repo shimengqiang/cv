@@ -1,16 +1,20 @@
 package com.vector.dubbo.service;
 
-import com.alibaba.dubbo.common.utils.CollectionUtils;
 import com.alibaba.dubbo.config.annotation.Service;
-import com.vector.dubbo.api.PoductDataService;
+import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.vector.dubbo.dao.mapper.SeckillMapper;
 import com.vector.dubbo.dao.mapper.SuccessKilledMapper;
 import com.vector.dubbo.dao.model.Seckill;
+import com.vector.dubbo.dao.model.SuccessKilled;
 import com.vector.dubbo.entity.ProductDto;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+import com.vector.dubbo.entity.ProductSeckillDetail;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Component;
  */
 @Service
 @Component
+@Slf4j
 public class ProductDataServiceImpl implements PoductDataService {
 
     @Autowired
@@ -63,8 +68,16 @@ public class ProductDataServiceImpl implements PoductDataService {
     }
 
     @Override
-    public Object querySuccessKillByIdWithSeckill(long seckillId) {
-        return successKilledMapper.queryByIdWithSeckill(seckillId);
+    public ProductSeckillDetail querySuccessKillByIdWithSeckill(long seckillId) {
+        log.info("seckillId{}",seckillId);
+        SuccessKilled successKilled = successKilledMapper.queryByIdWithSeckill(seckillId);
+        ProductSeckillDetail detail = new ProductSeckillDetail();
+        Optional.ofNullable(successKilled).ifPresent(successKilled1 -> {
+            log.info("{}", successKilled.toString());
+            BeanUtils.copyProperties(successKilled, detail);
+
+        });
+        return detail;
     }
 
 }

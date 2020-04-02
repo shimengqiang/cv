@@ -11,7 +11,7 @@ public interface SuccessKilledMapper {
 
     SuccessKilled selectByPrimaryKey(@Param("seckillId") Long seckillId, @Param("userPhone") Long userPhone);
 
-    List<SuccessKilled> selectAll();
+//    List<SuccessKilled> selectAll();
 
     int insertSuccessKilled(@Param("id") Long id, @Param("phone") long phone);
 

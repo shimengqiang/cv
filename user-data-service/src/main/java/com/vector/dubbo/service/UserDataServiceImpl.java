@@ -1,7 +1,6 @@
 package com.vector.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.vector.dubbo.api.UserDataServcie;
 import com.vector.dubbo.dao.mapper.UserMapper;
 import com.vector.dubbo.dao.model.User;
 import com.vector.dubbo.entity.UserDto;

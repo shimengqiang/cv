@@ -12,22 +12,6 @@ public class SuccessKilled {
     private Byte state;
 
     private Date createTime;
-    private Seckill seckill;
-
-    public Seckill getSeckill() {
-        return seckill;
-    }
-
-    public void setSeckill(Seckill seckill) {
-        this.seckill = seckill;
-    }
-
-    public SuccessKilled(Long seckillId, Long userPhone, Byte state, Date createTime) {
-        this.seckillId = seckillId;
-        this.userPhone = userPhone;
-        this.state = state;
-        this.createTime = createTime;
-    }
 
     public SuccessKilled() {
         super();

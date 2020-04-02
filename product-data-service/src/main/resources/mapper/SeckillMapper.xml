@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.vector.dubbo.dao.mapper.SeckillMapper" >
-  <resultMap id="BaseResultMap" type="com.vector.dubbo.dao.model.Seckill" >
-    <constructor >
-      <idArg column="seckill_id" jdbcType="BIGINT" javaType="java.lang.Long" />
-      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="number" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="start_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="end_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="creat_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-    </constructor>
-  </resultMap>
+  <!--<resultMap id="BaseResultMap" type="com.vector.dubbo.dao.model.Seckill" >-->
+    <!--<constructor >-->
+      <!--<idArg column="seckill_id" jdbcType="BIGINT" javaType="java.lang.Long" />-->
+      <!--<arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />-->
+      <!--<arg column="number" jdbcType="INTEGER" javaType="java.lang.Integer" />-->
+      <!--<arg column="start_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />-->
+      <!--<arg column="end_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />-->
+      <!--<arg column="creat_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />-->
+    <!--</constructor>-->
+  <!--</resultMap>-->
 
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" resultType="com.vector.dubbo.dao.model.Seckill" parameterType="java.lang.Long" >
     select seckill_id, name, number, start_time, end_time, creat_time
     from seckill
     where seckill_id = #{seckillId,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
+  <select id="selectAll" resultType="com.vector.dubbo.dao.model.Seckill" >
     select seckill_id, name, number, start_time, end_time, creat_time
     from seckill
     order by creat_time desc limit #{offset},#{limit}

@@ -5,16 +5,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Hello world!
- *
+ * @author shimengqiang
+ * @Date 2020-04-02-16:16
+ * @Version 1.0
  */
 @EnableDubboConfiguration
 @SpringBootApplication
-public class App 
-{
+public class WebApp {
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        SpringApplication.run(App.class,args);
+        SpringApplication.run(WebApp.class,args);
     }
 }
+    

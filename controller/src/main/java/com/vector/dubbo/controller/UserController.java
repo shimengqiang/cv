@@ -1,14 +1,10 @@
 package com.vector.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.vector.dubbo.api.PoductDataService;
-import com.vector.dubbo.api.UserService;
+import com.vector.dubbo.service.UserService;
 import com.vector.dubbo.bean.in.UserInVo;
-import com.vector.dubbo.entity.ProductDto;
 import com.vector.dubbo.entity.UserDto;
-import java.util.List;
 import org.springframework.beans.BeanUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

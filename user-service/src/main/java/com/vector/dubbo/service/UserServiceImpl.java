@@ -2,8 +2,6 @@ package com.vector.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
-import com.vector.dubbo.api.UserDataServcie;
-import com.vector.dubbo.api.UserService;
 import com.vector.dubbo.entity.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

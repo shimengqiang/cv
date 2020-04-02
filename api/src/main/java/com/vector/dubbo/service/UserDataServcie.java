@@ -1,4 +1,4 @@
-package com.vector.dubbo.api;
+package com.vector.dubbo.service;
 
 import com.vector.dubbo.entity.UserDto;
 

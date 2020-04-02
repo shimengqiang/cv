@@ -1,6 +1,8 @@
-package com.vector.dubbo.api;
+package com.vector.dubbo.service;
 
 import com.vector.dubbo.entity.ProductDto;
+import com.vector.dubbo.entity.ProductSeckillDetail;
+
 import java.util.Date;
 import java.util.List;
 
@@ -33,5 +35,5 @@ public interface PoductDataService {
 
     int insertSuccessKilled(Long seckillId, long userPhone);
 
-    Object querySuccessKillByIdWithSeckill(long seckillId);
+    ProductSeckillDetail querySuccessKillByIdWithSeckill(long seckillId);
 }
