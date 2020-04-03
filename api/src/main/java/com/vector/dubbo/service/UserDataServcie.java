@@ -1,5 +1,7 @@
 package com.vector.dubbo.service;
 
+import com.vector.dubbo.dto.BaseRequest;
+import com.vector.dubbo.dto.MusersDto;
 import com.vector.dubbo.dto.UserDto;
 
 /**
@@ -12,5 +14,9 @@ public interface UserDataServcie {
     UserDto findUserByName(String name);
 
     void register(UserDto userDto);
+
+    MusersDto findById(Long  id);
+
+    MusersDto query(BaseRequest request);
 }
     

@@ -1,8 +1,13 @@
 package com.vector.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.vector.dubbo.dao.mapper.MusersMapper;
 import com.vector.dubbo.dao.mapper.UserMapper;
+import com.vector.dubbo.dao.model.Musers;
 import com.vector.dubbo.dao.model.User;
+import com.vector.dubbo.dto.BaseRequest;
+import com.vector.dubbo.dto.MusersDto;
+import com.vector.dubbo.dto.MusersQueryRequest;
 import com.vector.dubbo.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -23,6 +28,8 @@ import java.util.Optional;
 public class UserDataServiceImpl implements UserDataServcie {
     @Autowired
     private UserMapper mapper;
+    @Autowired
+    private MusersMapper musersMapper;
     @Override
     public UserDto findUserByName(String name) {
         User user = mapper.findByName(name);
@@ -37,6 +44,23 @@ public class UserDataServiceImpl implements UserDataServcie {
     public void register(UserDto userDto) {
 //        mapper.insertUser(userDto.getName());
         log.info("register");
+    }
+
+    @Override
+    public MusersDto findById(Long id) {
+        MusersDto dto = new MusersDto();
+        Musers musers = musersMapper.selectByPrimaryKey(id);
+        BeanUtils.copyProperties(musers,dto);
+        return dto;
+    }
+
+    @Override
+    public MusersDto query(BaseRequest request) {
+        MusersQueryRequest queryRequest = (MusersQueryRequest) request;
+        MusersDto dto = new MusersDto();
+        Musers musers = musersMapper.selectByPrimaryKey(queryRequest.getId());
+        BeanUtils.copyProperties(musers,dto);
+        return dto;
     }
 
     @PostConstruct

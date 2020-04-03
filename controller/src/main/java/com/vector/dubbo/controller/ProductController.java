@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/product")
 public class ProductController {
 
-    @Reference
+//    @Reference
     private PoductDataService poductDataService;
 
     @GetMapping("/list")
