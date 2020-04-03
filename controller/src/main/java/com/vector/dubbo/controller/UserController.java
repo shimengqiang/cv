@@ -5,6 +5,7 @@ import com.vector.dubbo.service.UserDataServcie;
 import com.vector.dubbo.service.UserService;
 import com.vector.dubbo.bean.in.UserInVo;
 import com.vector.dubbo.dto.UserDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Reference
