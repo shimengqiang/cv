@@ -1,6 +1,6 @@
 package com.vector.dubbo.service;
 
-import com.vector.dubbo.entity.UserDto;
+import com.vector.dubbo.dto.UserDto;
 
 /**
  * @author shimengqiang
@@ -11,6 +11,6 @@ public interface UserDataServcie {
 
     UserDto findUserByName(String name);
 
-
+    void register(UserDto userDto);
 }
     

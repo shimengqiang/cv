@@ -1,6 +1,6 @@
 package com.vector.dubbo.service;
 
-import com.vector.dubbo.entity.UserDto;
+import com.vector.dubbo.dto.UserDto;
 
 public interface UserService {
 

@@ -1,9 +1,9 @@
 package com.vector.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.vector.dubbo.entity.ProductSeckillDetail;
+import com.vector.dubbo.dto.ProductSeckillDetail;
 import com.vector.dubbo.service.PoductDataService;
-import com.vector.dubbo.entity.ProductDto;
+import com.vector.dubbo.dto.ProductDto;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

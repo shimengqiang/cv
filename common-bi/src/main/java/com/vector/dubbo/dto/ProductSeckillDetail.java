@@ -1,4 +1,4 @@
-package com.vector.dubbo.entity;
+package com.vector.dubbo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

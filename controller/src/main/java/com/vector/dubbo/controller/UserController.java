@@ -1,9 +1,10 @@
 package com.vector.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.vector.dubbo.service.UserDataServcie;
 import com.vector.dubbo.service.UserService;
 import com.vector.dubbo.bean.in.UserInVo;
-import com.vector.dubbo.entity.UserDto;
+import com.vector.dubbo.dto.UserDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Reference
-    private UserService service;
+    private UserDataServcie service;
 
     @PostMapping("/login")
-    public String login(String name, String password){
-        return service.login(name, password);
+    public Object login(String name, String password){
+        return service.findUserByName(name);
     }
     @PostMapping("/register")
     public Object register(@RequestBody UserInVo userInVo){

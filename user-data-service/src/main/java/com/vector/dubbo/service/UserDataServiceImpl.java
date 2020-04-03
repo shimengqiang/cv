@@ -3,7 +3,7 @@ package com.vector.dubbo.service;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.vector.dubbo.dao.mapper.UserMapper;
 import com.vector.dubbo.dao.model.User;
-import com.vector.dubbo.entity.UserDto;
+import com.vector.dubbo.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +32,13 @@ public class UserDataServiceImpl implements UserDataServcie {
         });
         return userDto;
     }
+
+    @Override
+    public void register(UserDto userDto) {
+//        mapper.insertUser(userDto.getName());
+        log.info("register");
+    }
+
     @PostConstruct
     public void test(){
         System.out.println(mapper.selectAll());

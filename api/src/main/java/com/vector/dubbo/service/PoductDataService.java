@@ -1,7 +1,7 @@
 package com.vector.dubbo.service;
 
-import com.vector.dubbo.entity.ProductDto;
-import com.vector.dubbo.entity.ProductSeckillDetail;
+import com.vector.dubbo.dto.ProductDto;
+import com.vector.dubbo.dto.ProductSeckillDetail;
 
 import java.util.Date;
 import java.util.List;

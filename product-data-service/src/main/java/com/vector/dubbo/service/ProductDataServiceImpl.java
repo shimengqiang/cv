@@ -1,19 +1,17 @@
 package com.vector.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.vector.dubbo.dao.mapper.SeckillMapper;
 import com.vector.dubbo.dao.mapper.SuccessKilledMapper;
 import com.vector.dubbo.dao.model.Seckill;
 import com.vector.dubbo.dao.model.SuccessKilled;
-import com.vector.dubbo.entity.ProductDto;
+import com.vector.dubbo.dto.ProductDto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
-import com.vector.dubbo.entity.ProductSeckillDetail;
+import com.vector.dubbo.dto.ProductSeckillDetail;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
