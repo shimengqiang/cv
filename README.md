@@ -1,4 +1,4 @@
-## v2
+# springboot-dubbo-mybatis
 ## parent
 - common-bi
 - api
