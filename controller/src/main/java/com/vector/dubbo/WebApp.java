@@ -3,6 +3,7 @@ package com.vector.dubbo;
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @author shimengqiang
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @EnableDubboConfiguration
 @SpringBootApplication
+@ServletComponentScan("com.vector.dubbo.conf.filter")
 public class WebApp {
     public static void main( String[] args )
     {
