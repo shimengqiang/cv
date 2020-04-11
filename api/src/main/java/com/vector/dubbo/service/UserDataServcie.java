@@ -12,5 +12,7 @@ public interface UserDataServcie {
     UserDto findUserByName(String name);
 
     void register(UserDto userDto);
+
+    UserDto findById(Long id);
 }
     

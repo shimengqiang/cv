@@ -10,4 +10,7 @@ public interface UserMapper {
     List<User> selectAll();
 
     User findByName(String name);
+
+    @Select("select * from user where id = ${id}")
+    User findById(@Param("id") Long id);
 }

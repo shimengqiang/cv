@@ -17,7 +17,7 @@ import java.util.Optional;
  * @Date 2020-03-27-14:24
  * @Version 1.0
  */
-@Service
+@Service(timeout = 2000,version = "1.0")
 @Component
 @Slf4j
 public class UserDataServiceImpl implements UserDataServcie {
@@ -37,6 +37,23 @@ public class UserDataServiceImpl implements UserDataServcie {
     public void register(UserDto userDto) {
 //        mapper.insertUser(userDto.getName());
         log.info("register");
+    }
+
+    @Override
+    public UserDto findById(Long id) {
+        log.info(Thread.currentThread().getName());
+        UserDto dto = new UserDto();
+        User user = mapper.findById(id);
+        if (user != null){
+            BeanUtils.copyProperties(user, dto);
+        }
+        // try {
+        //     //若大于 @Service(timeout = 2000,version = "1.0") 会重试3次
+        //     Thread.sleep(2000);
+        // } catch (InterruptedException e) {
+        //     e.printStackTrace();
+        // }
+        return dto;
     }
 
     @PostConstruct
