@@ -6,12 +6,12 @@ import com.vector.dubbo.dao.mapper.SuccessKilledMapper;
 import com.vector.dubbo.dao.model.Seckill;
 import com.vector.dubbo.dao.model.SuccessKilled;
 import com.vector.dubbo.dto.ProductDto;
+import com.vector.dubbo.dto.ProductSeckillDetail;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
-import com.vector.dubbo.dto.ProductSeckillDetail;
+import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class ProductDataServiceImpl implements PoductDataService {
+
+	@PostConstruct
+	public void init(){
+		System.out.println("init");
+	}
 
     @Autowired
     private SeckillMapper seckillMapper;
@@ -49,7 +54,15 @@ public class ProductDataServiceImpl implements PoductDataService {
     @Override
     public List<ProductDto> queryAllSeckill(int offset, int limit) {
         List<ProductDto> dtoList = new ArrayList<>();
-        List<Seckill> seckills = seckillMapper.selectAll(offset, limit);
+        List<Seckill> seckills = new ArrayList<>();
+		for (int i = 0; i < 100; i++) {
+			Seckill seckill = new Seckill();
+			seckill.setSeckillId(1L);
+			seckill.setName("1L");
+			seckill.setNumber(100);
+			seckills.add(seckill);
+		}
+
         System.out.println(seckills.toString());
         seckills.forEach(seckill -> {
             ProductDto dto = new ProductDto();
@@ -68,7 +81,10 @@ public class ProductDataServiceImpl implements PoductDataService {
     @Override
     public ProductSeckillDetail querySuccessKillByIdWithSeckill(long seckillId) {
         log.info("seckillId{}",seckillId);
-        SuccessKilled successKilled = successKilledMapper.queryByIdWithSeckill(seckillId);
+        // SuccessKilled successKilled = successKilledMapper.queryByIdWithSeckill(seckillId);
+        SuccessKilled successKilled = new SuccessKilled();
+		successKilled.setSeckillId(1L);
+		successKilled.setUserPhone(13051200847L);
         ProductSeckillDetail detail = new ProductSeckillDetail();
         Optional.ofNullable(successKilled).ifPresent(successKilled1 -> {
             log.info("{}", successKilled.toString());

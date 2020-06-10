@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class UserController {
 
-    @Reference(version = "1.0")
+    // @Reference(version = "1.0")
     private UserDataServcie service;
     @Autowired
     private FutureTask futureTask;
